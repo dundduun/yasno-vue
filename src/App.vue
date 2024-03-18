@@ -1,16 +1,45 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import StatisticsItem from './components/StatisticsItem.vue'
 
-const activeTariff = ref(0)
+const activeTariff = ref(0);
+let id = 0;
 
 const tariffs = [
   {
-    title: 'Для себя', 
-    description: '~ 50 мин・от 2 850 ₽', 
+    title: 'Для себя',
+    description: '~ 50 мин・от 2 850 ₽'
   },
   {
-    title: 'Для двоих', 
-    description: '~ 1,5 часа・от 4 850 ₽', 
+    title: 'Для двоих',
+    description: '~ 1,5 часа・от 4 850 ₽'
+  }
+]
+
+const statisticsItems = [
+  {
+    id: id++,
+    title: '270 000+',
+    definitionStart: 'человек нашли своего',
+    definitionEnd: 'психолога онлайн'
+  },
+  {
+    id: id++,
+    title: '4 100',
+    definitionStart: 'проверенных',
+    definitionEnd: 'специалистов'
+  },
+  {
+    id: id++,
+    title: '7 лет',
+    definitionStart: 'средний опыт',
+    definitionEnd: 'практики'
+  },
+  {
+    id: id++,
+    title: '81%',
+    definitionStart: 'клиентов чувствуют',
+    definitionEnd: 'результат после 5-й сессии'
   }
 ]
 
@@ -32,10 +61,8 @@ const tariffs = [
         </h1>
         <div class="clickable-part">
           <div class="for-who">
-            <button v-for="(tariff, index) of tariffs"
-              :class="{ active: index === activeTariff }"
-              @click="activeTariff = index"
-            >{{ tariff.title }}</button>
+            <button v-for="(tariff, index) of tariffs" :class="{ active: index === activeTariff }"
+              @click="activeTariff = index">{{ tariff.title }}</button>
           </div>
 
           <span id="price">{{ tariffs[activeTariff].description }}</span>
@@ -55,28 +82,9 @@ const tariffs = [
 
   <div class="statistics">
     <ul>
-      <li>
-        <span class="element-head">270 000+</span>
-        <span class="element-definition">человек нашли своего<br>
-          психолога онлайн</span>
-      </li>
-
-      <li>
-        <span class="element-head">4 100</span>
-        <span class="element-definition">проверенных
-          <br>специалистов</span>
-      </li>
-
-      <li>
-        <span class="element-head">7 лет</span>
-        <span class="element-definition">средний опыт
-          <br>практики</span>
-      </li>
-
-      <li>
-        <span class="element-head">81%</span>
-        <span class="element-definition">клиентов чувствуют
-          <br>результат после 5-й сессии</span>
+      <li v-for="item in statisticsItems">
+        <StatisticsItem :key="item.id" :title="item.title" :definitionStart="item.definitionStart"
+          :definitionEnd="item.definitionEnd" />
       </li>
     </ul>
   </div>
@@ -275,12 +283,28 @@ const tariffs = [
             color: white;
             border: 2px #45a7f5 solid;
             border-radius: 8px;
-            transition: 0.2s linear;
           }
 
-          button:hover {
-            background: #f0f2f5;
-            color: #45a7f5;
+          @media (hover: hover) {
+            button {
+              transition: 0.2s linear;
+            }
+
+            button:hover {
+              background: #f0f2f5;
+              color: #45a7f5;
+            }
+          }
+
+          @media (hover: none) {
+            button {
+              transition: 0.07s linear;
+            }
+
+            button:active {
+              background: #f0f2f5;
+              color: #45a7f5;
+            }
           }
         }
       }
@@ -323,17 +347,8 @@ const tariffs = [
     li {
       display: flex;
       flex-direction: column;
-      flex-direction: space-evenly;
       text-align: center;
-
-      .element-head {
-        font-size: 35px;
-      }
-
-      .element-definition {
-        font-size: 20px;
-        color: #a4afba;
-      }
+      padding: 10px;
     }
   }
 }
@@ -412,9 +427,26 @@ const tariffs = [
       margin-top: 10px;
     }
 
-    button:hover {
-      background: #fff;
-      color: #45a7f5;
+    @media (hover: hover) {
+      button {
+        transition: 0.2s linear;
+      }
+
+      button:hover {
+        background: #f0f2f5;
+        color: #45a7f5;
+      }
+    }
+
+    @media (hover: none) {
+      button {
+        transition: 0.07s linear;
+      }
+
+      button:active {
+        background: #f0f2f5;
+        color: #45a7f5;
+      }
     }
   }
 }
