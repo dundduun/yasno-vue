@@ -1,10 +1,10 @@
-<script setup>
-defineProps([
-    'id',
-    'title',
-    'definitionStart',
-    'definitionEnd'
-    ])
+<script setup lang="ts">
+defineProps<{
+    id?: number, 
+    title: string,
+    definitionStart: string,
+    definitionEnd: string
+}>()
 </script>
 
 <template>
