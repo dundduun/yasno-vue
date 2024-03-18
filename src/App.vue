@@ -203,7 +203,7 @@ const tariffs = [
     width: 1440px;
     display: flex;
     flex-flow: wrap row;
-    justify-content: space-between;
+    justify-content: center;
     padding: 40px 0px 80px 40px;
 
     .left-side {
