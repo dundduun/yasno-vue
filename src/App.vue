@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import StatisticsItem from './components/StatisticsItem.vue'
 
 const activeTariff = ref(0);
-let id = 0;
 
 const tariffs = [
   {
@@ -18,25 +17,21 @@ const tariffs = [
 
 const statisticsItems = [
   {
-    id: id++,
     title: '270 000+',
     definitionStart: 'человек нашли своего',
     definitionEnd: 'психолога онлайн'
   },
   {
-    id: id++,
     title: '4 100',
     definitionStart: 'проверенных',
     definitionEnd: 'специалистов'
   },
   {
-    id: id++,
     title: '7 лет',
     definitionStart: 'средний опыт',
     definitionEnd: 'практики'
   },
   {
-    id: id++,
     title: '81%',
     definitionStart: 'клиентов чувствуют',
     definitionEnd: 'результат после 5-й сессии'
@@ -82,8 +77,8 @@ const statisticsItems = [
 
   <div class="statistics">
     <ul>
-      <li v-for="item in statisticsItems">
-        <StatisticsItem :key="item.id" :title="item.title" :definitionStart="item.definitionStart"
+      <li v-for="(item, index) in statisticsItems">
+        <StatisticsItem :key="index" :title="item.title" :definitionStart="item.definitionStart"
           :definitionEnd="item.definitionEnd" />
       </li>
     </ul>
@@ -283,6 +278,7 @@ const statisticsItems = [
             color: white;
             border: 2px #45a7f5 solid;
             border-radius: 8px;
+            cursor: pointer;
           }
 
           @media (hover: hover) {
@@ -425,6 +421,7 @@ const statisticsItems = [
       border-radius: 8px;
       transition: 0.2s linear;
       margin-top: 10px;
+      cursor: pointer;
     }
 
     @media (hover: hover) {
