@@ -41,31 +41,31 @@ const statisticsItems = [
 
 const advantages = [
   {
-    advantageNumber: 1,
+    src: '/advantage-1.png',
     direction: 'row',
     title: 'Консультации по безопасному видеочату',
     description: 'На нашей платформе видеоконсультации проходят в защищенном личном кабинете'
   },
   {
-    advantageNumber: 2,
+    src: '/advantage-2.png',
     direction: 'row-reverse',
     title: 'Простое управление расписанием',
     description: 'Назначайте и переносите, мы напомним и не дадим вам забыть'
   },
   {
-    advantageNumber: 3,
+    src: '/advantage-3.png',
     direction: 'row',
     title: 'Сопровождение на всех этапах',
     description: 'Ответим на вопросы о психологии, поможем, поддержим, объясним, направим'
   },
   {
-    advantageNumber: 4,
+    src: '/advantage-4.png',
     direction: 'row-reverse',
     title: 'От 2 850 ₽ за сессию',
     description: 'Мы установили минимально возможную цену, чтобы терапия была доступна каждому'
   },
   {
-    advantageNumber: 5,
+    src: '/advantage-5.png',
     direction: 'row',
     title: 'Оплата картами РФ и иностранных банков',
     description: 'Заботьтесь о своем ментальном здоровье из любой точки мира'
@@ -185,8 +185,8 @@ const advantages = [
 
       <div class="content">
         <div v-for="(item, index) of advantages" class="advantage">
-          <Advantage 
-          :advantageNumber="item.advantageNumber"
+          <Advantage
+          :src="item.src"
           :direction="item.direction"
           :title="item.title"
           :description="item.description"

@@ -1,6 +1,7 @@
 <script setup lang="ts">
+
 defineProps<{
-    advantageNumber: number;
+    src: any;
     direction: string;
     title: string;
     description: string
@@ -8,10 +9,10 @@ defineProps<{
 </script>
 
 
-<template class>
+<template>
     <div class="total-container">
         <div class="wrapper" :class="direction">
-            <img :src="`/src/assets/images/advantage-${advantageNumber}.png`">
+            <img :src="src">
 
             <div class="text">
                 <span class="title">{{ title }}</span>
@@ -30,12 +31,12 @@ defineProps<{
 
     .wrapper {
         flex: 1 1 1440px;
-        margin-top: 100px;
         display: flex;
         align-items: flex-end;
         justify-content: center;
         gap: 60px; 
-    
+        margin-top: 100px;
+
     &.row {
             flex-direction: row;
         }
