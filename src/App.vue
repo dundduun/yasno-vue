@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import StatisticsItem from './components/StatisticsItem.vue'
+import Advantage from './components/Advantage.vue'
 
 const activeTariff = ref(0);
 
@@ -35,6 +36,39 @@ const statisticsItems = [
     title: '81%',
     definitionStart: 'клиентов чувствуют',
     definitionEnd: 'результат после 5-й сессии'
+  }
+]
+
+const advantages = [
+  {
+    advantageNumber: 1,
+    direction: 'row',
+    title: 'Консультации по безопасному видеочату',
+    description: 'На нашей платформе видеоконсультации проходят в защищенном личном кабинете'
+  },
+  {
+    advantageNumber: 2,
+    direction: 'row-reverse',
+    title: 'Простое управление расписанием',
+    description: 'Назначайте и переносите, мы напомним и не дадим вам забыть'
+  },
+  {
+    advantageNumber: 3,
+    direction: 'row',
+    title: 'Сопровождение на всех этапах',
+    description: 'Ответим на вопросы о психологии, поможем, поддержим, объясним, направим'
+  },
+  {
+    advantageNumber: 4,
+    direction: 'row-reverse',
+    title: 'От 2 850 ₽ за сессию',
+    description: 'Мы установили минимально возможную цену, чтобы терапия была доступна каждому'
+  },
+  {
+    advantageNumber: 5,
+    direction: 'row',
+    title: 'Оплата картами РФ и иностранных банков',
+    description: 'Заботьтесь о своем ментальном здоровье из любой точки мира'
   }
 ]
 
@@ -89,7 +123,7 @@ const statisticsItems = [
       <h2 id="help-with-what">С чем <span>поможет</span> психолог?</h2>
 
       <ul>
-        <div class="list-top three-items">
+        <div class="three-items">
           <li>
             <img src="@/assets/images/help-with-one.svg" alt="Два человека в объятиях">
             <p>Наладить гармоничные<br>
@@ -112,7 +146,7 @@ const statisticsItems = [
           </li>
         </div>
 
-        <div class="list-bottom three-items">
+        <div class="three-items">
           <li>
             <img src="@/assets/images/help-with-four.svg"
               alt="Девушка за столом держит руку лицевой стороной лодони, говоря нет без зазрения совести">
@@ -142,7 +176,7 @@ const statisticsItems = [
     </div>
   </div>
 
-  <div class="section-3">
+  <section class="service-advantages">
     <div class="container">
       <h2 class="section-title"><span>Сервис устроен легко и удобно</span><br>
         Это не наши слова — так считают<br>
@@ -150,10 +184,18 @@ const statisticsItems = [
       </h2>
 
       <div class="content">
-
+        <div v-for="(item, index) of advantages" class="advantage">
+          <Advantage 
+          :advantageNumber="item.advantageNumber"
+          :direction="item.direction"
+          :title="item.title"
+          :description="item.description"
+          :key="index"
+           />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">
@@ -448,12 +490,12 @@ const statisticsItems = [
   }
 }
 
-.section-3 {
-  width: 100vw;
+section.service-advantages {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 0 0 0;
+  padding: 90px 0 0 0;
   background-color: #f0f2f5;
 
   .container {
@@ -465,6 +507,7 @@ const statisticsItems = [
       text-align: center;
       font-weight: 500;
       font-size: 55px;
+      margin: 40px 0 0 0;
 
       span {
         color: #42b2fc;
@@ -472,7 +515,9 @@ const statisticsItems = [
     }
 
     .content {
-      margin-top: 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 }
