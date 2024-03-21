@@ -30,12 +30,14 @@ defineProps<{
     flex-direction: row;
 
     .wrapper {
-        flex: 1 1 1440px;
+        flex: 1 1 auto;
         display: flex;
         align-items: flex-end;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 60px; 
         margin-top: 100px;
+        width: fit-content;
 
     &.row {
             flex-direction: row;
@@ -53,7 +55,7 @@ defineProps<{
 
         .text {
             height: 249px;
-            flex: 0 1 521px;
+            flex: 0 1 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
