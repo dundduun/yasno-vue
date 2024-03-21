@@ -50,7 +50,7 @@ defineProps<{
         img {
             border-bottom: 1px #ccd3d9 solid;
             width: 530px;
-            height: 305px;
+            height: auto;
         }
 
         .text {
