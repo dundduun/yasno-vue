@@ -199,6 +199,19 @@ const advantages = [
 </template>
 
 <style lang="scss">
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+section,
+footer, 
+div {
+  overflow: hidden;
+  overflow-wrap: normal;
+}
+
 .header-container {
   display: flex;
   justify-content: center;
@@ -212,8 +225,7 @@ const advantages = [
     justify-content: space-between;
     align-items: center;
     flex-grow: 0;
-    max-width: 1440px;
-    padding: 15px 40px;
+    padding: 15px 3.3vw;
     background-color: white;
 
     .title {
@@ -249,7 +261,7 @@ const advantages = [
     display: flex;
     flex-flow: wrap row;
     justify-content: center;
-    padding: 40px 0px 80px 40px;
+    padding: 40px 0px 80px 3.3vw;
 
     .left-side {
       max-width: 540px;
@@ -335,10 +347,6 @@ const advantages = [
           }
 
           @media (hover: none) {
-            button {
-              transition: 0.07s linear;
-            }
-
             button:active {
               background: #f0f2f5;
               color: #45a7f5;
@@ -478,10 +486,6 @@ const advantages = [
     }
 
     @media (hover: none) {
-      button {
-        transition: 0.07s linear;
-      }
-
       button:active {
         background: #f0f2f5;
         color: #45a7f5;
