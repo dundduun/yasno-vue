@@ -212,6 +212,8 @@ div {
   overflow-wrap: normal;
 }
 
+
+
 .header-container {
   display: flex;
   justify-content: center;
@@ -347,6 +349,10 @@ div {
           }
 
           @media (hover: none) {
+            button {
+              transition: 0.07s linear;
+            }
+            
             button:active {
               background: #f0f2f5;
               color: #45a7f5;
@@ -486,6 +492,10 @@ div {
     }
 
     @media (hover: none) {
+      button {
+        transition: 0.07s linear;
+      }
+
       button:active {
         background: #f0f2f5;
         color: #45a7f5;
