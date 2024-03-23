@@ -185,28 +185,58 @@ const advantages = [
 
       <div class="content">
         <div v-for="(item, index) of advantages" class="advantage">
-          <Advantage
-          :src="item.src"
-          :direction="item.direction"
-          :title="item.title"
-          :description="item.description"
-          :key="index"
-           />
+          <Advantage :src="item.src" :direction="item.direction" :title="item.title" :description="item.description"
+            :key="index" />
         </div>
       </div>
     </div>
   </section>
+
+  <footer>
+    <div class="container">
+      <div class="download">
+        <a class="by-qr" href="https://apps.apple.com/ru/app/%D1%8F%D1%81%D0%BD%D0%BE-%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD/id1584370233?mt=8">
+          <img class="line-under-qr" src="@/assets/images/line-under-qr.svg">
+          <div class="relative-content">
+            <img src="@/assets/images/qr-download.svg" alt="Qr-code for download" class="qr">
+            <span>Скачать приложение</span>
+          </div>
+        </a>
+        <div class="app-stores">
+          <img src="@/assets/images/app-store-download.svg" class="application-store" alt="Download in App Store">
+          <img src="@/assets/images/google-play-download.svg" class="application-store" alt="Download in Google Play">
+        </div>
+
+      </div>
+
+      <div class="oh-yasno">
+
+      </div>
+
+      <div class="useful">
+
+      </div>
+
+      <div class="more">
+
+      </div>
+
+      <div class="our-socials">
+
+      </div>
+    </div>
+  </footer>
+
 </template>
 
 <style lang="scss">
-
 * {
   box-sizing: border-box;
   margin: 0;
 }
 
 section,
-footer, 
+footer,
 div {
   overflow: hidden;
   overflow-wrap: normal;
@@ -352,7 +382,7 @@ div {
             button {
               transition: 0.07s linear;
             }
-            
+
             button:active {
               background: #f0f2f5;
               color: #45a7f5;
@@ -509,8 +539,9 @@ section.service-advantages {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 90px 0 0 0;
+  padding: 90px 0 90px 0;
   background-color: #f0f2f5;
+
 
   .container {
     width: 100%;
@@ -532,6 +563,74 @@ section.service-advantages {
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+  background-color: white;
+
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1440px;
+
+    .download {
+
+      .by-qr {
+        display: flex;
+        text-decoration: none;
+
+        img.line-under-qr {
+          width: 160px;
+          height: 50px;
+          background-color: #f3f5f6;
+          border-radius: 10px;
+        }
+
+        .relative-content {
+          position: relative;
+          right: 160px;
+          width: 160px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 4px 4px 4px 10px;
+          border-radius: 10px;
+
+          img.qr {
+            height: 40px;
+            width: 40px;
+          }
+
+          span {
+            margin-left: 10px;
+            font-size: 11px;
+            color: black;
+          }
+        }
+      }
+
+      .app-stores {
+        margin-top: 5px;
+        width: 160px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .application-store {
+          width: 78px;
+          height: 24px;
+        }
+      }
     }
   }
 }
