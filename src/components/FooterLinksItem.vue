@@ -23,10 +23,12 @@ defineProps<{
 
 <style scoped lang="scss">
 .wrapper {
+    padding: 10px;
 
     h5 {
-        font-weight: normal;
+        font-weight: 500;
         font-size: 14px;
+        color: #345066;
     }
 
     .links {
