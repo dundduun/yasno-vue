@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import StatisticsItem from './components/StatisticsItem.vue'
 import Advantage from './components/Advantage.vue'
+import FooterLinksItem from './components/FooterLinksItem.vue'
 
 const activeTariff = ref(0);
 
@@ -69,6 +70,76 @@ const advantages = [
     direction: 'row',
     title: 'Оплата картами РФ и иностранных банков',
     description: 'Заботьтесь о своем ментальном здоровье из любой точки мира'
+  }
+]
+
+const footerLinksData = [
+  {
+    title: 'О, ясно',
+    links: [
+      {
+        name: 'Вопросы-ответы',
+        linkHref: 'https://yasno.live/faq'
+      },
+      {
+        name: 'Контакты',
+        linkHref: 'https://yasno.live/contacts'
+      },
+      {
+        name: 'Вакансии',
+        linkHref: 'https://work.yasno.live/'
+      },
+      {
+        name: 'Ясно для бизнеса',
+        linkHref: 'https://business.yasno.live/'
+      }
+    ]
+  },
+  {
+    title: 'Полезное',
+    links: [
+      {
+        name: 'Каталог психологов',
+        linkHref: 'https://yasno.live/therapists'
+      },
+      {
+        name: 'Бесплатная помощь',
+        linkHref: 'https://yasno.live/free-psychological-help'
+      },
+      {
+        name: 'Психологические тесты',
+        linkHref: 'https://yasno.live/tests'
+      },
+      {
+        name: 'Статьи о психологии',
+        linkHref: 'https://yasno.live/blog'
+      }
+    ]
+  },
+  {
+    title: 'Ещё',
+    links: [
+      {
+        name: 'Подарочные сертификаты',
+        linkHref: 'https://yasno.live/gifts'
+      },
+      {
+        name: 'Правила акций',
+        linkHref: 'https://yasno.live/promo'
+      },
+      {
+        name: 'Пользовательское соглашение',
+        linkHref: 'https://yasno.live/terms'
+      },
+      {
+        name: 'Обработка персональных данных',
+        linkHref: 'https://yasno.live/personaldata'
+      },
+      {
+        name: 'Согласие на обработку  ',
+        linkHref: 'https://yasno.live/consent'
+      }
+    ]
   }
 ]
 
@@ -195,35 +266,29 @@ const advantages = [
   <footer>
     <div class="container">
       <div class="download">
-        <a class="by-qr" href="https://apps.apple.com/ru/app/%D1%8F%D1%81%D0%BD%D0%BE-%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD/id1584370233?mt=8">
+        <a class="by-qr"
+          href="https://apps.apple.com/ru/app/%D1%8F%D1%81%D0%BD%D0%BE-%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD/id1584370233?mt=8">
           <img class="line-under-qr" src="@/assets/images/line-under-qr.svg">
-          <div class="relative-content">
+          <div class="absolute-content">
             <img src="@/assets/images/qr-download.svg" alt="Qr-code for download" class="qr">
             <span>Скачать приложение</span>
           </div>
         </a>
         <div class="app-stores">
-          <img src="@/assets/images/app-store-download.svg" class="application-store" alt="Download in App Store">
-          <img src="@/assets/images/google-play-download.svg" class="application-store" alt="Download in Google Play">
+          <a
+            href="https://apps.apple.com/ru/app/%D1%8F%D1%81%D0%BD%D0%BE-%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD/id1584370233?mt=8">
+            <img src="@/assets/images/app-store-download.svg" class="application-store" alt="Download in App Store">
+          </a>
+          <a href="https://app.appsflyer.com/live.yasno.app?pid=12&utm_source=footer">
+            <img src="@/assets/images/google-play-download.svg" class="application-store" alt="Download in Google Play">
+          </a>
         </div>
-
       </div>
 
-      <div class="oh-yasno">
-
-      </div>
-
-      <div class="useful">
-
-      </div>
-
-      <div class="more">
-
-      </div>
-
-      <div class="our-socials">
-
-      </div>
+      <FooterLinksItem 
+      v-for="linksSection in footerLinksData"
+      :title="linksSection.title"
+      :links="linksSection.links"/>
     </div>
   </footer>
 
@@ -572,13 +637,14 @@ footer {
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  margin-top: 100px;
+  padding: 40px;
   background-color: white;
 
 
   .container {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     width: 100%;
     max-width: 1440px;
@@ -596,9 +662,8 @@ footer {
           border-radius: 10px;
         }
 
-        .relative-content {
-          position: relative;
-          right: 160px;
+        .absolute-content {
+          position: absolute;
           width: 160px;
           display: flex;
           flex-direction: row;
@@ -612,9 +677,9 @@ footer {
           }
 
           span {
-            margin-left: 10px;
+            margin-left: 14px;
             font-size: 11px;
-            color: black;
+            color: rgb(35, 35, 35);
           }
         }
       }
