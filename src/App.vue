@@ -285,11 +285,32 @@ const footerLinksData = [
         </div>
       </div>
 
-      <FooterLinksItem 
-      v-for="linksSection in footerLinksData"
-      :title="linksSection.title"
-      :links="linksSection.links"/>
+      <FooterLinksItem v-for="linksSection in footerLinksData" :title="linksSection.title"
+        :links="linksSection.links" />
+
+      <div class="social-media">
+        <span>© 2017–2024 Ясно</span>
+
+        <div class="four-media-icons">
+          <a href="https://vk.com/yasnotherapy">
+            <img src="@/assets/images/vk.svg" alt="Мы Вконтакте">
+          </a>
+          <a href="https://dzen.ru/yasnolive?utm_referrer=yasno.live">
+            <img src="@/assets/images/ya-dzen.svg" alt="Мы в Яндекс Дзен">
+          </a>
+          <a href="https://t.me/yasno_live">
+            <img src="@/assets/images/telegram.svg" alt="Мы в Телеграме">
+          </a>
+          <a href="https://www.youtube.com/c/%D0%AF%D1%81%D0%BD%D0%BE%D0%BB%D0%B0%D0%B9%D0%B2">
+            <img src="@/assets/images/youtube.svg" alt="Мы в Youtube">
+          </a>
+        </div>
+        <a href="https://navigator.sk.ru/orn/1124519">
+          <img class="skolkovo-icon" src="@/assets/images/skolkovo.svg" alt="Мы ">
+        </a>
+      </div>
     </div>
+
   </footer>
 
 </template>
@@ -640,16 +661,16 @@ footer {
   padding: 40px;
   background-color: white;
 
-
   .container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 1440px;
+    max-width: 1240px;
 
     .download {
+      padding: 10px;
 
       .by-qr {
         display: flex;
@@ -679,7 +700,8 @@ footer {
           span {
             margin-left: 14px;
             font-size: 11px;
-            color: rgb(35, 35, 35);
+            color: #345066;
+
           }
         }
       }
@@ -695,6 +717,36 @@ footer {
           width: 78px;
           height: 24px;
         }
+      }
+    }
+
+    .social-media {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 15px;
+      padding: 10px;
+
+      span {
+        font-size: 14px;
+        color: #345066;
+      }
+
+      .four-media-icons {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+
+        img {
+          height: 32px;
+          width: 32px;
+        }
+
+      }
+
+      img.skolkovo-icon {
+        height: 22px;
+        width: 68px;
       }
     }
   }
