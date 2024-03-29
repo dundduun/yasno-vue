@@ -143,6 +143,8 @@ const footerLinksData = [
   }
 ]
 
+const currentYear = 1970 + Math.floor(Date.now() / 31_556_952_000);
+
 </script>
 
 <template>
@@ -289,7 +291,7 @@ const footerLinksData = [
         :links="linksSection.links" />
 
       <div class="social-media">
-        <span>© 2017–2024 Ясно</span>
+        <span>© 2017–{{ currentYear }} Ясно</span>
 
         <div class="four-media-icons">
           <a href="https://vk.com/yasnotherapy">
