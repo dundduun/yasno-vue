@@ -268,7 +268,9 @@ const currentYear = 1970 + Math.floor(Date.now() / 31_556_952_000);
   <footer>
     <div class="container">
       <div class="phone-download">
-        <a>Скачать приложение</a>
+        <a
+          href="https://apps.apple.com/ru/app/%D1%8F%D1%81%D0%BD%D0%BE-%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD/id1584370233?mt=8">Скачать
+          приложение</a>
       </div>
 
       <div class="desktop">
@@ -293,8 +295,10 @@ const currentYear = 1970 + Math.floor(Date.now() / 31_556_952_000);
           </div>
         </div>
 
-        <FooterLinksItem v-for="linksSection in footerLinksData" :title="linksSection.title"
-          :links="linksSection.links" />
+        <div class="footer-links-items">
+          <FooterLinksItem v-for="linksSection in footerLinksData" :title="linksSection.title"
+            :links="linksSection.links" />
+        </div>
 
         <div class="social-media">
           <div class="main-socials">
@@ -462,10 +466,9 @@ div {
             border: 2px #45a7f5 solid;
             border-radius: 8px;
             cursor: pointer;
-          }
 
-          @media (hover: hover) {
-            button {
+
+            @media(hover: hover) {
               transition: 0.2s linear;
 
               &:hover {
@@ -473,16 +476,15 @@ div {
                 color: #45a7f5;
               }
             }
-          }
 
-          @media (hover: none) {
-            button {
+
+            @media(hover: none) {
               transition: 0.07s linear;
-            }
 
-            button:active {
-              background: #f0f2f5;
-              color: #45a7f5;
+              &:active {
+                background: #f0f2f5;
+                color: #45a7f5;
+              }
             }
           }
         }
@@ -607,7 +609,7 @@ div {
       cursor: pointer;
     }
 
-    @media (hover: hover) {
+    @media(hover: hover) {
       button {
         transition: 0.2s linear;
 
@@ -618,7 +620,7 @@ div {
       }
     }
 
-    @media (hover: none) {
+    @media(hover: none) {
       button {
         transition: 0.07s linear;
       }
@@ -676,11 +678,15 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1240px;
+    max-width: 1100px;
 
     .phone-download {
       display: none;
       justify-content: center;
+
+      @media(max-width: 1022px) {
+        display: flex;
+      }
 
       a {
         flex-grow: 1;
@@ -706,12 +712,20 @@ footer {
       width: 100%;
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: center;
       flex-wrap: wrap;
       margin-top: 10px;
 
+      @media(max-width: 1022px) {
+        flex-direction: column;
+      }
+
       .download {
         padding: 10px;
+
+        @media(max-width: 1022px) {
+          display: none;
+        }
 
         .by-qr {
           display: flex;
@@ -758,6 +772,19 @@ footer {
             width: 78px;
             height: 24px;
           }
+        }
+      }
+
+      .footer-links-items {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        flex-grow: 1;
+        margin-top: 10px;
+
+        @media(max-width: 1022px) {
+          justify-content: flex-start;
+          gap: 5vw;
         }
       }
 
