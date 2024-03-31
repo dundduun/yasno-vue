@@ -368,18 +368,24 @@ div {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 20px 0 20px 0;
+  padding: 20px 0;
   border-bottom: 1px #e4e5e7 solid;
 
   ul {
     max-width: 1400px;
     width: 100%;
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
     justify-content: space-evenly;
+    grid-template-columns: repeat(4, auto);
     margin: 0;
     padding: 0;
     list-style-type: none;
+
+    @media (max-width: 925px) {
+      grid-template: auto auto / 1fr 1fr;
+      gap: 30px / 10px;
+      margin-left: 10px;
+    }
 
     li {
       display: flex;

@@ -16,10 +16,20 @@ defineProps<{
 
 .element-head {
     font-size: 35px;
+
+    @media (max-width: 925px) {
+        text-align: start;
+        font-size: 22px;
+    }
 }
 
 .element-definition {
     font-size: 20px;
     color: #a4afba;
+
+    @media (max-width: 925px) {
+        text-align: start;
+        font-size: 16px;
+    }
 }
 </style>
