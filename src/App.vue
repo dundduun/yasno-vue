@@ -7,23 +7,23 @@ import CoverSection from './components/CoverSection.vue'
 const statisticsItems = [
   {
     title: '270 000+',
-    definitionStart: 'человек нашли своего',
-    definitionEnd: 'психолога онлайн'
+    definition: 'человек нашли своего психолога онлайн',
+    width: 'width-280px'
   },
   {
     title: '4 100',
-    definitionStart: 'проверенных',
-    definitionEnd: 'специалистов'
+    definition: 'проверенных специалистов',
+    width: 'width-140px'
   },
   {
     title: '7 лет',
-    definitionStart: 'средний опыт',
-    definitionEnd: 'практики'
+    definition: 'средний опыт практики',
+    width: 'width-140px'
   },
   {
     title: '81%',
-    definitionStart: 'клиентов чувствуют',
-    definitionEnd: 'результат после 5-й сессии'
+    definition: 'клиентов чувствуют результат после 5-й сессии',
+    width: 'width-280px'
   }
 ]
 
@@ -147,8 +147,11 @@ const currentYear = 1970 + Math.floor(Date.now() / 31_556_952_000);
   <div class="statistics">
     <ul>
       <li v-for="(item, index) in statisticsItems">
-        <StatisticsItem :key="index" :title="item.title" :definitionStart="item.definitionStart"
-          :definitionEnd="item.definitionEnd" />
+        <StatisticsItem 
+        :key="index" 
+        :title="item.title" 
+        :definition="item.definition"
+        :width="item.width" />
       </li>
     </ul>
   </div>
