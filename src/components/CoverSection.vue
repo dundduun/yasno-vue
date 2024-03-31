@@ -218,8 +218,8 @@ const tariffs = [
 
             img.call-session {
                 height: auto;
-                width: 36vw;
-                max-width: 650px;
+                width: 100%;
+                max-width: 612px;
 
                 @media(max-width: 925px) {
                     width: 308px;
