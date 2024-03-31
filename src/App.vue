@@ -175,7 +175,7 @@ const currentYear = 1970 + Math.floor(Date.now() / 31_556_952_000);
       </div>
 
       <div class="images">
-        <img class="man-on-laptop-call" src="@/assets/images/quality-call-session.png"
+        <img class="call-session" src="@/assets/images/quality-call-session.png"
           alt="Психолог на видеозвонке на ноутбуке">
       </div>
 
@@ -361,21 +361,43 @@ div {
     padding: 15px 3.3vw;
     background-color: white;
 
+    @media(max-width: 925px) {
+      padding: 5px 3.3vw;
+    }
+
     .title {
       font-size: 35px;
       color: #42b2fc;
       font-weight: bold;
       text-decoration: none;
+
+      @media(max-width: 925px) {
+        font-size: 30px;
+      }
     }
 
     .help-with-what-anchor {
       padding: 10px 0px 10px 10px;
+      text-align: end;
       color: black;
-      transition: 0.3s;
+      font-size: 16px;
+      transition: color 0.3s;
       text-decoration: none;
 
-      &:hover {
-        color: #42b2fc;
+      @media(hover: hover) {
+        &:hover {
+          color: #42b2fc;
+        }
+      } 
+
+      @media(hover: none) {
+        &:active {
+          color: #42b2fc;
+        }
+      }
+
+      @media(max-width: 925px) {
+        font-size: 14px;
       }
     }
   }
@@ -392,23 +414,36 @@ div {
     box-sizing: border-box;
     width: 1440px;
     display: flex;
-    flex-flow: wrap row;
+    flex-direction: row;
     justify-content: center;
     padding: 40px 0px 80px 3.3vw;
+
+    @media(max-width: 925px) {
+      flex-direction: column;
+      padding-bottom: 30px;
+    }
 
     .left-side {
       max-width: 540px;
       display: flex;
-      flex: 1 1 auto;
-      margin-bottom: 20px;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 20px;
+
+      @media(max-width: 925px) {
+        max-width: none;
+        width: 100%;
+      }
 
       h1 {
-        max-width: 540px;
         flex: 0 1 auto;
         font-size: 53px;
         font-weight: 500;
+
+        @media(max-width: 925px) {
+          align-self: flex-start;
+          font-size: 27px;
+        }
 
         span {
           color: #42b2fc;
@@ -420,56 +455,89 @@ div {
         width: fit-content;
         flex-direction: column;
         align-items: flex-start;
+        padding-right: 3.3vw;
+
+        @media(max-width: 925px) {
+          width: 100%;
+        }
 
         .for-who {
+          display: flex;
+          flex-direction: row;
           margin-top: 70px;
           width: fit-content;
           background-color: #e6e8eb;
           border: 1px #d9dfe4 solid;
           border-radius: 8px;
 
+          @media (max-width: 925px) {
+            width: 100%;
+          }
+
           button {
-            transition: 0.5s;
-            border: none;
             width: 179px;
-            border-radius: 8px;
-            font-family: "Rubik", sans-serif;
-            font-size: 20px;
+            flex-grow: 1;
             padding: 15px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
             background-color: #e6e8eb;
             color: #434343;
-            cursor: pointer;
+            transition: color 0.5s,
+              background-color 0.5s;
+            font-family: "Rubik", sans-serif;
 
             &.active {
               background-color: white;
               color: black;
             }
+
+            @media(max-width: 925px) {
+              font-size: 16px;
+              padding: 13px;
+            }
           }
         }
 
         #price {
+          align-self: center;
           color: #6d757c;
           margin-top: 7px;
-          align-self: center;
+
+          @media(max-width: 925px) {
+            font-size: 14px;
+          }
         }
 
         .pick-up {
           margin-top: 30px;
 
+          @media(max-width: 925px) {
+            width: 100%;
+          }
+
           button {
-            height: 70px;
-            width: 358px;
+            padding: 20px 59px;
+            border: 2px #45a7f5 solid;
+            border-radius: 8px;
             font-size: 23px;
             font-family: 'Rubik', sans-serif;
             background-color: #45a7f5;
             color: white;
-            border: 2px #45a7f5 solid;
-            border-radius: 8px;
             cursor: pointer;
 
+            @media(max-width: 925px) {
+              width: 100%;
+              height: auto;
+              padding: 13px;
+              font-size: 16px;
+              font-weight: 450;
+            }
 
             @media(hover: hover) {
-              transition: 0.2s linear;
+              transition: color 0.2s linear,
+                background-color 0.2s linear;
 
               &:hover {
                 background: #f0f2f5;
@@ -477,9 +545,9 @@ div {
               }
             }
 
-
             @media(hover: none) {
-              transition: 0.07s linear;
+              transition: color 0.07s linear,
+                background-color 0.07s linear;
 
               &:active {
                 background: #f0f2f5;
@@ -498,10 +566,22 @@ div {
       align-self: center;
       margin-top: 10px;
 
-      .man-on-laptop-call {
+      @media(max-width: 925px) {
+        width: 100%;
+      }
+
+      img.call-session {
         height: auto;
-        width: 90%;
+        width: 36vw;
         max-width: 650px;
+
+        @media(max-width: 925px) {
+          width: 308px;
+        }
+
+        @media(max-width: 340px) {
+          width: 100%;
+        }
       }
     }
   }
@@ -604,30 +684,27 @@ div {
       color: white;
       border: 2px #45a7f5 solid;
       border-radius: 8px;
-      transition: 0.2s linear;
       margin-top: 10px;
       cursor: pointer;
-    }
 
-    @media(hover: hover) {
-      button {
-        transition: 0.2s linear;
+      @media(hover: hover) {
+        transition: color 0.2s linear,
+          background-color 0.2s linear;
 
         &:hover {
           background: #f0f2f5;
           color: #45a7f5;
         }
       }
-    }
 
-    @media(hover: none) {
-      button {
-        transition: 0.07s linear;
-      }
+      @media(hover: none) {
+        transition: 0.07s linear,
+          background-color 0.07s linear;
 
-      button:active {
-        background: #f0f2f5;
-        color: #45a7f5;
+        &:active {
+          background: #f0f2f5;
+          color: #45a7f5;
+        }
       }
     }
   }
@@ -796,11 +873,22 @@ footer {
         align-items: flex-end;
         padding: 10px;
 
+        @media(max-width: 1022px) {
+          flex-flow: row wrap;
+          align-items: center;
+          flex: 1 1 auto;
+        }
+
         .main-socials {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
           gap: 15px;
+
+          @media(max-width: 1022px) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+          }
 
           span {
             font-size: 14px;
@@ -825,17 +913,6 @@ footer {
           img.skolkovo-icon {
             height: 22px;
             width: 68px;
-          }
-        }
-
-        @media(max-width: 1022px) {
-          flex-direction: row;
-          align-items: center;
-          flex: 1 1 auto;
-
-          .main-socials {
-            flex-direction: column-reverse;
-            align-items: flex-start;
           }
         }
       }
