@@ -86,11 +86,12 @@
 
         ul {
             width: 100%;
+            max-width: 1140px;
             display: grid;
-            grid-template-columns: 300px 300px 300px;
+            grid-template-columns: repeat(auto-fill, minmax(304px, 1fr));
             justify-content: space-evenly;
-            justify-items: center;
-            align-items: center;
+            place-items: center;
+            gap: 10px;
             margin-top: 50px;
             list-style-type: none;
             padding: 0;
@@ -104,10 +105,12 @@
 
                 img {
                     width: 208px;
-                    height: auto;
+                    height: 160px;
                 }
 
                 p {
+                    height: 60px;
+                    width: 305px;
                     font-size: 20px;
                     margin-top: 25px;
                     line-height: 150%;
