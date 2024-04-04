@@ -35,10 +35,10 @@ li {
         height: 60px;
         width: 305px;
         max-width: 100%;
-        font-size: 20px;
         margin-top: 25px;
-        line-height: 150%;
         text-align: center;
+        line-height: 150%;
+        font-size: 20px;
 
         @media(max-width: 925px) {
             font-size: 16px;
