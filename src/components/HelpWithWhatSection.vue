@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import Carousel from './Carousel.vue'
+import Carousel from './Carousel.vue'
 import HelpWithWhatItem from './HelpWithWhatItem.vue'
 
 const helpWithWhatItems = [
@@ -36,15 +36,17 @@ const helpWithWhatItems = [
             <h2 id="help-with-what">С чем <span>поможет</span> психолог?</h2>
 
             <ul>
-                <HelpWithWhatItem 
-                v-for="helpWithWhatItem in helpWithWhatItems"
-                :src="helpWithWhatItem.src"
-                :description="helpWithWhatItem.description"/>
+                <HelpWithWhatItem v-for="helpWithWhatItem in helpWithWhatItems" 
+                    :src="helpWithWhatItem.src"
+                    :description="helpWithWhatItem.description" 
+                />
             </ul>
 
-            <!-- <Carousel /> -->
+            <Carousel class="carousel" :helpWithWhatItems="helpWithWhatItems" />
 
-            <button>Хочу обсудить свою ситуацию</button>
+            <div class="button-wrapper">
+                <button>Хочу обсудить свою ситуацию</button>
+            </div>
         </div>
     </section>
 </template>
@@ -58,10 +60,6 @@ section.help-with-what {
     padding: 70px 0 90px 0;
     width: 100%;
 
-    @media(max-width: 925px) {
-        padding-top: 35px;
-    }
-
     .container {
         width: 100%;
         max-width: 1440px;
@@ -74,6 +72,7 @@ section.help-with-what {
             font-weight: 500;
 
             @media(max-width: 925px) {
+                padding: 0 3.3vw 0 3.3vw;
                 font-size: 27px;
                 align-self: flex-start;
             }
@@ -87,47 +86,83 @@ section.help-with-what {
             width: 100%;
             max-width: 1140px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(304px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
             justify-content: space-evenly;
             place-items: center;
-            gap: 10px;
             margin-top: 50px;
             list-style-type: none;
             padding: 0;
+
+            @media(max-width: 925px) {
+                display: none;
+            }
         }
     }
 
-    button {
-        height: 60px;
-        width: 390px;
-        font-size: 23px;
-        font-family: 'Rubik', sans-serif;
-        background-color: #45a7f5;
-        color: white;
-        border: 2px #45a7f5 solid;
-        border-radius: 8px;
+    .carousel {
+        display: none;
+        margin-top: 90px;
+        cursor: default;
+
+        @media(max-width: 925px) {
+            display: block;
+        }
+    }
+
+    .button-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 10px;
-        cursor: pointer;
 
-        @media(hover: hover) {
-            transition: color 0.2s linear,
-                background-color 0.2s linear;
+        @media(max-width: 925px) {
+            margin-top: 35px;
+            padding: 0 3.3vw 0 3.3vw;
+        }
 
-            &:hover {
-                background: #f0f2f5;
-                color: #45a7f5;
+        button {
+            height: 60px;
+            width: 390px;
+            font-size: 23px;
+            font-family: 'Rubik', sans-serif;
+            background-color: #45a7f5;
+            color: white;
+            border: 2px #45a7f5 solid;
+            border-radius: 8px;
+            cursor: pointer;
+
+            @media(max-width: 925px) {
+                height: auto;
+                width: 100%;
+                padding: 13px;
+                font-size: 16px;
+                font-weight: 450;
+            }
+
+            @media(hover: hover) {
+                transition: color 0.2s linear,
+                    background-color 0.2s linear;
+
+                &:hover {
+                    background: #f0f2f5;
+                    color: #45a7f5;
+                }
+            }
+
+            @media(hover: none) {
+                transition: 0.07s linear,
+                    background-color 0.07s linear;
+
+                &:active {
+                    background: #f0f2f5;
+                    color: #45a7f5;
+                }
             }
         }
 
-        @media(hover: none) {
-            transition: 0.07s linear,
-                background-color 0.07s linear;
-
-            &:active {
-                background: #f0f2f5;
-                color: #45a7f5;
-            }
-        }
     }
+
+
 }
 </style>
