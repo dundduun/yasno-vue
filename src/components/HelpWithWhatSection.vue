@@ -1,72 +1,66 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// import Carousel from './Carousel.vue'
+import HelpWithWhatItem from './HelpWithWhatItem.vue'
 
+const helpWithWhatItems = [
+    {
+        src: '/help-with-one.svg',
+        description: 'Наладить гармоничные отношения с близкими людьми'
+    },
+    {
+        src: '/help-with-two.svg',
+        description: 'Справиться со стрессом, тревогой и страхом'
+    },
+    {
+        src: '/help-with-three.svg',
+        description: 'Принять себя и повысить самооценку'
+    },
+    {
+        src: '/help-with-four.svg',
+        description: 'Научиться говорить «нет» и отстаивать личные границы'
+    },
+    {
+        src: '/help-with-five.svg',
+        description: 'Пережить перемены: переезд, расставание, потеря работы'
+    },
+    {
+        src: '/help-with-six.svg',
+        description: 'Понять, почему на работе проблемы и нет мотивации'
+    },
+]
+</script>
 
 <template>
-    <div class="section-2">
+    <section class="help-with-what">
         <div class="container">
             <h2 id="help-with-what">С чем <span>поможет</span> психолог?</h2>
 
             <ul>
-                <li>
-                    <img src="@/assets/images/help-with-one.svg" alt="Два человека в объятиях">
-                    <p>Наладить гармоничные<br>
-                        отношения с близкими людьми
-                    </p>
-                </li>
-
-                <li>
-                    <img src="@/assets/images/help-with-two.svg"
-                        alt="Умиротворённая девушка, со сложенными в ладонях руками">
-                    <p>Справиться со стрессом,<br>
-                        тревогой и страхом
-                    </p>
-                </li>
-
-                <li>
-                    <img src="@/assets/images/help-with-three.svg" alt="Мужчина с радостью смотрит в зеркало">
-                    <p>Принять себя и повысить<br>
-                        самооценку
-                    </p>
-                </li>
-
-                <li>
-                    <img src="@/assets/images/help-with-four.svg" alt="Девушка за столом держит руку лицевой стороной лодони, 
-                            говоря нет без зазрения совести">
-                    <p>Научиться говорить «нет»<br>
-                        и отстаивать личные границы
-                    </p>
-                </li>
-
-                <li>
-                    <img src="@/assets/images/help-with-five.svg" alt="Мужчина держит в руках сердце с маленькими перекрёстными 
-                            пластырями">
-                    <p>Пережить перемены: переезд,<br>
-                        расставание, потеря работы
-                    </p>
-                </li>
-
-                <li>
-                    <img src="@/assets/images/help-with-six.svg"
-                        alt="Девушка с радостью усердно трудится за компьютером">
-                    <p>Понять, почему на работе<br>
-                        проблемы и нет мотивации
-                    </p>
-                </li>
+                <HelpWithWhatItem 
+                v-for="helpWithWhatItem in helpWithWhatItems"
+                :src="helpWithWhatItem.src"
+                :description="helpWithWhatItem.description"/>
             </ul>
+
+            <!-- <Carousel /> -->
 
             <button>Хочу обсудить свою ситуацию</button>
         </div>
-    </div>
+    </section>
 </template>
 
 
 <style scoped lang="scss">
-.section-2 {
+section.help-with-what {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 70px 0 90px 0;
     width: 100%;
+
+    @media(max-width: 925px) {
+        padding-top: 35px;
+    }
 
     .container {
         width: 100%;
@@ -78,6 +72,11 @@
         h2 {
             font-size: 55px;
             font-weight: 500;
+
+            @media(max-width: 925px) {
+                font-size: 27px;
+                align-self: flex-start;
+            }
 
             span {
                 color: #42b2fc;
@@ -95,28 +94,6 @@
             margin-top: 50px;
             list-style-type: none;
             padding: 0;
-
-            li {
-                height: 323px;
-                width: 304px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                img {
-                    width: 208px;
-                    height: 160px;
-                }
-
-                p {
-                    height: 60px;
-                    width: 305px;
-                    font-size: 20px;
-                    margin-top: 25px;
-                    line-height: 150%;
-                    text-align: center;
-                }
-            }
         }
     }
 
