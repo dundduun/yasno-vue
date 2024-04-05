@@ -33,7 +33,7 @@ defineProps<{
         </Slide>
 
         <template #addons>
-            <Pagination />
+            <Pagination class="pagination"/>
         </template>
     </Carousel>
 </template>
@@ -45,7 +45,6 @@ defineProps<{
     .slide {
 
         .carousel__item {
-            // width: 304px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -65,6 +64,10 @@ defineProps<{
             }
 
         }
+    }
+
+    .pagination {
+        margin-top: 30px;
     }
 }
 </style>

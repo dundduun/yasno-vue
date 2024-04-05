@@ -57,7 +57,7 @@ section.help-with-what {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 70px 0 90px 0;
+    padding: 70px 0 56px 0;
     width: 100%;
 
     .container {
@@ -73,7 +73,7 @@ section.help-with-what {
 
             @media(max-width: 925px) {
                 padding: 0 3.3vw 0 3.3vw;
-                font-size: 27px;
+                font-size: 24px;
                 align-self: flex-start;
             }
 
@@ -101,7 +101,7 @@ section.help-with-what {
 
     .carousel {
         display: none;
-        margin-top: 90px;
+        margin-top: 80px;
         cursor: default;
 
         @media(max-width: 925px) {
