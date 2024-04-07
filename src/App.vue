@@ -2,9 +2,8 @@
 import CoverSection from './components/CoverSection.vue'
 import StatisticsItem from './components/StatisticsItem.vue'
 import HelpWithWhatSection from './components/HelpWithWhatSection.vue'
-import Advantage from './components/Advantage.vue'
+import ServiceAdvantages from './components/ServiceAdvantages.vue'
 import FooterSection from './components/FooterSection.vue'
-// import FooterLinksItem from './components/FooterLinksItem.vue'
 
 const statisticsItems = [
   {
@@ -26,39 +25,6 @@ const statisticsItems = [
     title: '81%',
     definition: 'клиентов чувствуют результат после 5-й сессии',
     width: 'width-280px'
-  }
-]
-
-const advantages = [
-  {
-    src: '/advantage-1.png',
-    direction: 'row',
-    title: 'Консультации по безопасному видеочату',
-    description: 'На нашей платформе видеоконсультации проходят в защищенном личном кабинете'
-  },
-  {
-    src: '/advantage-2.png',
-    direction: 'row-reverse',
-    title: 'Простое управление расписанием',
-    description: 'Назначайте и переносите, мы напомним и не дадим вам забыть'
-  },
-  {
-    src: '/advantage-3.png',
-    direction: 'row',
-    title: 'Сопровождение на всех этапах',
-    description: 'Ответим на вопросы о психологии, поможем, поддержим, объясним, направим'
-  },
-  {
-    src: '/advantage-4.png',
-    direction: 'row-reverse',
-    title: 'От 2 850 ₽ за сессию',
-    description: 'Мы установили минимально возможную цену, чтобы терапия была доступна каждому'
-  },
-  {
-    src: '/advantage-5.png',
-    direction: 'row',
-    title: 'Оплата картами РФ и иностранных банков',
-    description: 'Заботьтесь о своем ментальном здоровье из любой точки мира'
   }
 ]
 </script>
@@ -83,21 +49,7 @@ const advantages = [
 
   <HelpWithWhatSection />
 
-  <section class="service-advantages">
-    <div class="container">
-      <h2 class="section-title"><span>Сервис устроен легко и удобно</span><br>
-        Это не наши слова — так считают<br>
-        наши пользователи
-      </h2>
-
-      <div class="content">
-        <div v-for="(item, index) of advantages" class="advantage">
-          <Advantage :src="item.src" :direction="item.direction" :title="item.title" :description="item.description"
-            :key="index" />
-        </div>
-      </div>
-    </div>
-  </section>
+  <ServiceAdvantages />
 
   <FooterSection />
 </template>
@@ -204,37 +156,4 @@ div {
       padding: 10px;
     }
   }
-}
-
-section.service-advantages {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 90px 0 90px 0;
-  background-color: #f0f2f5;
-
-  .container {
-    width: 100%;
-    max-width: 1440px;
-    box-sizing: border-box;
-
-    .section-title {
-      text-align: center;
-      font-weight: 500;
-      font-size: 55px;
-      margin: 40px 0 0 0;
-
-      span {
-        color: #42b2fc;
-      }
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-}
-</style>
+}</style>
