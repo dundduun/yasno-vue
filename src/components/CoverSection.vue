@@ -21,20 +21,21 @@ const tariffs = [
     <div class="cover-section">
         <div class="container">
             <div class="content">
-                <h1>Консультации <br>
-                    с психологом онлайн:<br>
+                <h1><span class="desktop-title">Консультации <br>
+                        с психологом онлайн:</span>
+                    <span class="mobile-title">Консультации с психологом онлайн:</span>
+                    <br>
                     <Slider />
                 </h1>
 
                 <div class="clickable-part">
                     <div class="for-who">
-                        <button v-for="(tariff, index) of tariffs" 
-                            :class="{ active: index === activeTariff }"
+                        <button v-for="(tariff, index) of tariffs" :class="{ active: index === activeTariff }"
                             @click="activeTariff = index">{{ tariff.title }}</button>
                     </div>
 
                     <span id="price">{{ tariffs[activeTariff].description }}</span>
-                    
+
                     <div class="pick-up">
                         <button>Подобрать психолога</button>
                     </div>
@@ -95,8 +96,19 @@ const tariffs = [
                     font-size: 27px;
                 }
 
-                span {
-                    color: #42b2fc;
+                .desktop-title {
+
+                    @media(max-width: 925px) {
+                        display: none;
+                    }
+                }
+
+                .mobile-title {
+                    display: none;
+
+                    @media(max-width: 925px) {
+                        display: inline;
+                    }
                 }
             }
 
