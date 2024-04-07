@@ -29,17 +29,20 @@ defineProps<{
     display: flex;
     flex-direction: row;
 
+    // @media(max-width: 1090px) {
+    //     width: 100%;
+    // }
+
     .wrapper {
         flex: 1 1 auto;
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        flex-wrap: wrap;
-        gap: 60px; 
+        gap: 60px;
         margin-top: 100px;
         width: fit-content;
 
-    &.row {
+        &.row {
             flex-direction: row;
         }
 
@@ -47,10 +50,25 @@ defineProps<{
             flex-direction: row-reverse;
         }
 
+        // @media(max-width: 1090px) {
+
+        //     &.row,
+        //     &.row-reverse {
+        //         flex-direction: column;
+        //         align-items: center;
+        //     }
+        // }
+
+
         img {
             border-bottom: 1px #ccd3d9 solid;
             width: 530px;
             height: auto;
+
+            @media(max-width: 1090px) {
+                align-self: center;
+                width: 40vw;
+            }
         }
 
         .text {
@@ -59,6 +77,11 @@ defineProps<{
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            // @media(max-width: 1090px) {
+            //     height: auto;
+            //     flex: none;
+            // }
 
             .title {
                 font-weight: 500;

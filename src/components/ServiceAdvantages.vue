@@ -39,15 +39,20 @@ const advantages = [
 <template>
     <section class="service-advantages">
         <div class="container">
-            <h2 class="section-title"><span>Сервис устроен легко и удобно</span><br>
-                Это не наши слова — так считают<br>
-                наши пользователи
+            <h2 class="section-title"><span class="important">
+                    Сервис устроен легко и удобно
+                </span><br>
+                <span class="desktop">Это не наши слова — так считают<br>
+                    наши пользователи</span>
+                <span class="mobile">
+                    Это не наши слова — так считают наши пользователи
+                </span>
             </h2>
 
             <div class="content">
                 <div v-for="(item, index) of advantages" class="advantage">
                     <Advantage :src="item.src" :direction="item.direction" :title="item.title"
-                        :description="item.description" :key="index" />
+                        :description="item.description" :key="index" class="advantage"/>
                 </div>
             </div>
         </div>
@@ -61,7 +66,7 @@ section.service-advantages {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 90px 0 90px 0;
+    padding: 90px 3.3vw 90px 3.3vw;
     background-color: #f0f2f5;
 
     .container {
@@ -75,8 +80,28 @@ section.service-advantages {
             font-size: 55px;
             margin: 40px 0 0 0;
 
-            span {
+            @media(max-width: 925px) {
+                text-align: left;
+                font-size: 24px;
+            }
+
+            span.important {
                 color: #42b2fc;
+            }
+
+            span.desktop {
+
+                @media(max-width: 925px) {
+                    display: none;
+                }
+            }
+
+            span.mobile {
+                display: none;
+
+                @media(max-width: 925px) {
+                    display: inline;
+                }
             }
         }
 
@@ -84,6 +109,13 @@ section.service-advantages {
             display: flex;
             flex-direction: column;
             align-items: center;
+/* 
+            .advantage {
+
+                @media(max-width: 1090px) {
+                    width: 100%;
+                }
+            } */
         }
     }
 }
