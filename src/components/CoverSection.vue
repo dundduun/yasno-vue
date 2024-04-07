@@ -73,8 +73,9 @@ const tariffs = [
         }
 
         .content {
-            max-width: 590px;
+            width: 590px;
             display: flex;
+            flex-shrink: 0;
             flex-direction: column;
             align-items: flex-start;
             margin-bottom: 20px;
@@ -121,6 +122,7 @@ const tariffs = [
 
                     @media (max-width: 925px) {
                         width: 100%;
+                        margin-top: 36px;
                     }
 
                     button {
