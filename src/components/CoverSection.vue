@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import Slider from './Slider.vue'
 
 const activeTariff = ref(0);
 
@@ -20,8 +21,9 @@ const tariffs = [
     <div class="cover-section">
         <div class="container">
             <div class="content">
-                <h1>Консультации с психологом онлайн:<br>
-                    <span>обрести спокойствие</span>
+                <h1>Консультации <br>
+                    с психологом онлайн:<br>
+                    <Slider />
                 </h1>
 
                 <div class="clickable-part">
@@ -61,7 +63,8 @@ const tariffs = [
         width: 1440px;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
         padding: 40px 0px 80px 3.3vw;
 
         @media(max-width: 925px) {
@@ -70,10 +73,10 @@ const tariffs = [
         }
 
         .content {
-            max-width: 540px;
+            max-width: 590px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 20px;
 
             @media(max-width: 925px) {
@@ -208,7 +211,6 @@ const tariffs = [
         .image-wrapper {
             display: flex;
             justify-content: flex-end;
-            flex: 1 1 auto;
             align-self: center;
             margin-top: 10px;
 
