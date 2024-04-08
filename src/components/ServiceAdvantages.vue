@@ -69,6 +69,10 @@ section.service-advantages {
     padding: 90px 3.3vw 90px 3.3vw;
     background-color: #f0f2f5;
 
+    @media(max-width: 925px) {
+        padding-top: 0;
+    }
+
     .container {
         width: 100%;
         max-width: 1440px;
@@ -109,13 +113,13 @@ section.service-advantages {
             display: flex;
             flex-direction: column;
             align-items: center;
-/* 
+
             .advantage {
 
-                @media(max-width: 1090px) {
+                @media(max-width: 925px) {
                     width: 100%;
                 }
-            } */
+            }
         }
     }
 }
