@@ -77,13 +77,13 @@ section.service-advantages {
         width: 100%;
         max-width: 1440px;
         box-sizing: border-box;
+        padding-top: 70px;
 
         .section-title {
             text-align: center;
             font-weight: 500;
             font-size: 55px;
-            margin: 40px 0 0 0;
-
+            
             @media(max-width: 925px) {
                 text-align: left;
                 font-size: 24px;

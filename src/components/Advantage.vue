@@ -29,10 +29,6 @@ defineProps<{
     display: flex;
     flex-direction: row;
 
-    // @media(max-width: 1090px) {
-    //     width: 100%;
-    // }
-
     .wrapper {
         flex: 1 1 auto;
         display: flex;
@@ -43,7 +39,8 @@ defineProps<{
         width: fit-content;
 
         @media(max-width: 925px) {
-            margin-top: 20px;
+            margin-top: 35px;
+            align-items: flex-start;
         }
 
         &.row {
@@ -69,6 +66,10 @@ defineProps<{
             @media(max-width: 1090px) {
                 align-self: center;
                 width: 40vw;
+            }
+
+            @media(max-width: 925px) {
+                width: 300px;
             }
         }
 
