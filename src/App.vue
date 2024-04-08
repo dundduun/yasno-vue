@@ -1,57 +1,24 @@
 <script setup lang="ts">
+import Header from './components/Header.vue'
 import CoverSection from './components/CoverSection.vue'
-import StatisticsItem from './components/StatisticsItem.vue'
+import StatisticsSection from './components/StatisticsSection.vue'
 import HelpWithWhatSection from './components/HelpWithWhatSection.vue'
 import ServiceAdvantages from './components/ServiceAdvantages.vue'
-import FooterSection from './components/FooterSection.vue'
-
-const statisticsItems = [
-  {
-    title: '270 000+',
-    definition: 'человек нашли своего психолога онлайн',
-    width: 'width-280px'
-  },
-  {
-    title: '4 100',
-    definition: 'проверенных специалистов',
-    width: 'width-140px'
-  },
-  {
-    title: '7 лет',
-    definition: 'средний опыт практики',
-    width: 'width-140px'
-  },
-  {
-    title: '81%',
-    definition: 'клиентов чувствуют результат после 5-й сессии',
-    width: 'width-280px'
-  }
-]
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <div class="header-container">
-    <div class="header">
-      <a href="#" class="title">ЯСНО</a>
-      <a href="#help-with-what" class="help-with-what-anchor">С чем поможет психолог?</a>
-    </div>
-  </div>
+  <Header />
 
   <CoverSection />
 
-  <div class="statistics">
-    <ul>
-      <li v-for="(item, index) in statisticsItems">
-        <StatisticsItem :key="index" :title="item.title" :definition="item.definition" :width="item.width" />
-      </li>
-    </ul>
-  </div>
+  <StatisticsSection />
 
   <HelpWithWhatSection />
 
   <ServiceAdvantages />
 
-  <FooterSection />
+  <Footer />
 </template>
 
 <style lang="scss">
@@ -61,99 +28,8 @@ const statisticsItems = [
 }
 
 section,
-footer,
 div {
   overflow: hidden;
   overflow-wrap: normal;
 }
-
-.header-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-
-  .header {
-    box-sizing: border-box;
-    width: 1440px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 0;
-    padding: 15px 3.3vw;
-    background-color: white;
-
-    @media(max-width: 925px) {
-      padding: 5px 3.3vw;
-    }
-
-    .title {
-      font-size: 35px;
-      color: #42b2fc;
-      font-weight: bold;
-      text-decoration: none;
-
-      @media(max-width: 925px) {
-        font-size: 30px;
-      }
-    }
-
-    .help-with-what-anchor {
-      padding: 10px 0px 10px 10px;
-      text-align: end;
-      color: black;
-      font-size: 16px;
-      transition: color 0.3s;
-      text-decoration: none;
-
-      @media(hover: hover) {
-        &:hover {
-          color: #42b2fc;
-        }
-      }
-
-      @media(hover: none) {
-        &:active {
-          color: #42b2fc;
-        }
-      }
-
-      @media(max-width: 925px) {
-        font-size: 14px;
-      }
-    }
-  }
-}
-
-.statistics {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 20px 0;
-  border-bottom: 1px #e4e5e7 solid;
-
-  ul {
-    max-width: 1400px;
-    width: 100%;
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(4, auto);
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-
-    @media (max-width: 925px) {
-      grid-template: auto auto / 1fr 1fr;
-      gap: 30px / 10px;
-      margin-left: 10px;
-    }
-
-    li {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      padding: 10px;
-    }
-  }
-}</style>
+</style>
