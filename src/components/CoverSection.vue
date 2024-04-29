@@ -28,7 +28,7 @@ const tariffs = [
                     </span>
                     <span class="mobile-title">
                         Консультации с психологом онлайн:
-                    </span >
+                    </span>
                     <br />
                     <Slider />
                 </h1>
@@ -44,7 +44,7 @@ const tariffs = [
                         </button>
                     </div>
 
-                    <span id="price">{{
+                    <span class="price">{{
                         tariffs[activeTariff].description
                     }}</span>
 
@@ -177,7 +177,7 @@ const tariffs = [
                     }
                 }
 
-                #price {
+                .price {
                     align-self: center;
                     color: #6d757c;
                     margin-top: 7px;
