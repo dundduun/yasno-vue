@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-    src: any;
+    source: string;
     direction: string;
     title: string;
     description: string;
@@ -10,7 +10,7 @@ defineProps<{
 <template>
     <div class="total-container">
         <div class="wrapper" :class="direction">
-            <img :src="src" />
+            <img :src="source" />
 
             <div class="text">
                 <span class="title">{{ title }}</span>
