@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Slider from './Slider.vue';
+import Slider from '../ui/Slider.vue';
 
 const activeTariff = ref(0);
 

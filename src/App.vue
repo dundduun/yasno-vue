@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Header from './components/Header.vue';
-import CoverSection from './components/CoverSection.vue';
-import StatisticsSection from './components/StatisticsSection.vue';
-import HelpWithWhatSection from './components/HelpWithWhatSection.vue';
-import ServiceAdvantages from './components/ServiceAdvantages.vue';
-import Footer from './components/Footer.vue';
+import Header from './components/sections/Header.vue';
+import CoverSection from './components/sections/CoverSection.vue';
+import StatisticsSection from './components/sections/StatisticsSection.vue';
+import HelpWithWhatSection from './components/sections/HelpWithWhatSection.vue';
+import ServiceAdvantages from './components/sections/ServiceAdvantages.vue';
+import Footer from './components/sections/Footer.vue';
 </script>
 
 <template>

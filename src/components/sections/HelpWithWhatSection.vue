@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Carousel from './Carousel.vue';
-import HelpWithWhatItem from './HelpWithWhatItem.vue';
+import Carousel from '../ui/Carousel.vue';
+import HelpWithWhatItem from '../ui/HelpWithWhatItem.vue';
 
 const helpWithWhatItems = [
     {

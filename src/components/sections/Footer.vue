@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FooterLinksItem from './FooterLinksItem.vue';
+import FooterLinksItem from '../ui/FooterLinksItem.vue';
 import { DateTime } from 'luxon';
 
 const currentYear = DateTime.now().toObject().year;

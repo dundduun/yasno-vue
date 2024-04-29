@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Advantage from './Advantage.vue';
+import Advantage from '../ui/Advantage.vue';
 
 const advantages = [
     {
