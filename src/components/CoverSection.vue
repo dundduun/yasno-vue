@@ -19,7 +19,7 @@ const tariffs = [
 <template>
     <div class="cover-section">
         <div class="container">
-            <div class="content">
+            <div class="information">
                 <h1>
                     <span class="desktop-title">
                         Консультации
@@ -87,7 +87,7 @@ const tariffs = [
             padding-bottom: 30px;
         }
 
-        .content {
+        .information {
             width: 590px;
             display: flex;
             flex-shrink: 0;
