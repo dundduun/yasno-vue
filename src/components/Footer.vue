@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import FooterLinksItem from './FooterLinksItem.vue';
+import { DateTime } from 'luxon';
 
-const currentYear = 1970 + Math.floor(Date.now() / 31_556_952_000);
+const currentYear = DateTime.now().toObject().year;
 
 const footerLinksData = [
     {
@@ -80,8 +81,9 @@ const footerLinksData = [
             <div class="phone-download">
                 <a
                     href="https://apps.apple.com/ru/app/%D1%8F%D1%81%D0%BD%D0%BE-%D0%BF%D1%81%D0%B8%D1%85%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD/id1584370233?mt=8"
-                    >Скачать приложение</a
                 >
+                    Скачать приложение
+                </a>
             </div>
 
             <div class="desktop">
