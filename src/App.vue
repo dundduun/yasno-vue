@@ -20,16 +20,3 @@ import Footer from './components/Footer.vue';
 
     <Footer />
 </template>
-
-<style lang="scss">
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-section,
-div {
-    overflow: hidden;
-    overflow-wrap: normal;
-}
-</style>
