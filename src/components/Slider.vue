@@ -2,10 +2,10 @@
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 
-let mm = gsap.matchMedia();
+const mm = gsap.matchMedia();
 
 onMounted(() => {
-    let tl = gsap.timeline({ repeat: 5 });
+    const tl = gsap.timeline({ repeat: 5 });
 
     mm.add('(min-width: 926px)', () => {
         tl.to(
@@ -70,7 +70,11 @@ onMounted(() => {
 <template>
     <ul class="slider-list">
         <li class="slider-item">повысить качество жизни</li>
-        <li class="slider-item desktop">справиться<br />со стрессом</li>
+        <li class="slider-item desktop">
+            справиться
+            <br />
+            со стрессом
+        </li>
         <li class="slider-item mobile">справиться со стрессом</li>
         <li class="slider-item">наладить отношения с близкими</li>
         <li class="slider-item">найти своё призвание</li>
