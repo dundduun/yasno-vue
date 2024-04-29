@@ -1,18 +1,16 @@
 <script setup lang="ts">
-
 defineProps<{
     src: any;
     direction: string;
     title: string;
-    description: string
-}>()
+    description: string;
+}>();
 </script>
-
 
 <template>
     <div class="total-container">
         <div class="wrapper" :class="direction">
-            <img :src="src">
+            <img :src="src" />
 
             <div class="text">
                 <span class="title">{{ title }}</span>
@@ -22,7 +20,6 @@ defineProps<{
         </div>
     </div>
 </template>
-
 
 <style scoped lang="scss">
 .total-container {
@@ -38,7 +35,7 @@ defineProps<{
         margin-top: 100px;
         width: fit-content;
 
-        @media(max-width: 925px) {
+        @media (max-width: 925px) {
             margin-top: 35px;
             align-items: flex-start;
         }
@@ -51,7 +48,7 @@ defineProps<{
             flex-direction: row-reverse;
         }
 
-        @media(max-width: 925px) {
+        @media (max-width: 925px) {
             &.row,
             &.row-reverse {
                 flex-direction: column;
@@ -63,12 +60,12 @@ defineProps<{
             width: 530px;
             height: auto;
 
-            @media(max-width: 1090px) {
+            @media (max-width: 1090px) {
                 align-self: center;
                 width: 40vw;
             }
 
-            @media(max-width: 925px) {
+            @media (max-width: 925px) {
                 width: 300px;
             }
         }
@@ -80,7 +77,7 @@ defineProps<{
             flex-direction: column;
             justify-content: center;
 
-            @media(max-width: 925px) {
+            @media (max-width: 925px) {
                 height: auto;
                 flex: none;
             }
@@ -90,7 +87,7 @@ defineProps<{
                 font-size: 32px;
                 line-height: 130%;
 
-                @media(max-width: 925px) {
+                @media (max-width: 925px) {
                     font-size: 21px;
                 }
             }
@@ -101,7 +98,7 @@ defineProps<{
                 color: #7f868f;
                 margin-top: 20px;
 
-                @media(max-width: 925px) {
+                @media (max-width: 925px) {
                     font-size: 16px;
                     margin-top: 10px;
                 }

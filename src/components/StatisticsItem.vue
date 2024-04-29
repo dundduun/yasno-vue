@@ -5,7 +5,7 @@ defineProps<{
     // definitionEnd: string
     definition: string;
     width: string;
-}>()
+}>();
 </script>
 
 <template>

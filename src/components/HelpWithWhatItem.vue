@@ -2,17 +2,15 @@
 defineProps<{
     src: string;
     description: string;
-}>()
+}>();
 </script>
-
 
 <template>
     <li>
-        <img :src="src">
+        <img :src="src" />
         <p>{{ description }}</p>
     </li>
 </template>
-
 
 <style scoped lang="scss">
 li {
@@ -26,7 +24,7 @@ li {
         width: 208px;
         height: 160px;
 
-        @media(max-width: 925px) {
+        @media (max-width: 925px) {
             font-size: 16px;
         }
     }
@@ -40,7 +38,7 @@ li {
         line-height: 150%;
         font-size: 20px;
 
-        @media(max-width: 925px) {
+        @media (max-width: 925px) {
             font-size: 16px;
         }
     }

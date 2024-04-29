@@ -1,40 +1,40 @@
 <script setup lang="ts">
-import StatisticsItem from './StatisticsItem.vue'
+import StatisticsItem from './StatisticsItem.vue';
 
 const statisticsItems = [
     {
         title: '270 000+',
         definition: 'человек нашли своего психолога онлайн',
-        width: 'width-280px'
+        width: 'width-280px',
     },
     {
         title: '4 100',
         definition: 'проверенных специалистов',
-        width: 'width-140px'
+        width: 'width-140px',
     },
     {
         title: '7 лет',
         definition: 'средний опыт практики',
-        width: 'width-140px'
+        width: 'width-140px',
     },
     {
         title: '81%',
         definition: 'клиентов чувствуют результат после 5-й сессии',
-        width: 'width-280px'
-    }
-]
+        width: 'width-280px',
+    },
+];
 </script>
 
 <template>
     <div class="statistics">
         <ul>
             <li v-for="(item, index) in statisticsItems">
-                <StatisticsItem 
-                :key="index" 
-                :title="item.title" 
-                :definition="item.definition" 
-                :width="item.width" 
-            />
+                <StatisticsItem
+                    :key="index"
+                    :title="item.title"
+                    :definition="item.definition"
+                    :width="item.width"
+                />
             </li>
         </ul>
     </div>

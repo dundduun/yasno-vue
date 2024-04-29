@@ -1,33 +1,33 @@
 <script setup lang="ts">
-import Carousel from './Carousel.vue'
-import HelpWithWhatItem from './HelpWithWhatItem.vue'
+import Carousel from './Carousel.vue';
+import HelpWithWhatItem from './HelpWithWhatItem.vue';
 
 const helpWithWhatItems = [
     {
         src: '/help-with-one.svg',
-        description: 'Наладить гармоничные отношения с близкими людьми'
+        description: 'Наладить гармоничные отношения с близкими людьми',
     },
     {
         src: '/help-with-two.svg',
-        description: 'Справиться со стрессом, тревогой и страхом'
+        description: 'Справиться со стрессом, тревогой и страхом',
     },
     {
         src: '/help-with-three.svg',
-        description: 'Принять себя и повысить самооценку'
+        description: 'Принять себя и повысить самооценку',
     },
     {
         src: '/help-with-four.svg',
-        description: 'Научиться говорить «нет» и отстаивать личные границы'
+        description: 'Научиться говорить «нет» и отстаивать личные границы',
     },
     {
         src: '/help-with-five.svg',
-        description: 'Пережить перемены: переезд, расставание, потеря работы'
+        description: 'Пережить перемены: переезд, расставание, потеря работы',
     },
     {
         src: '/help-with-six.svg',
-        description: 'Понять, почему на работе проблемы и нет мотивации'
+        description: 'Понять, почему на работе проблемы и нет мотивации',
     },
-]
+];
 </script>
 
 <template>
@@ -36,9 +36,10 @@ const helpWithWhatItems = [
             <h2 id="help-with-what">С чем <span>поможет</span> психолог?</h2>
 
             <ul>
-                <HelpWithWhatItem v-for="helpWithWhatItem in helpWithWhatItems" 
+                <HelpWithWhatItem
+                    v-for="helpWithWhatItem in helpWithWhatItems"
                     :src="helpWithWhatItem.src"
-                    :description="helpWithWhatItem.description" 
+                    :description="helpWithWhatItem.description"
                 />
             </ul>
 
@@ -50,7 +51,6 @@ const helpWithWhatItems = [
         </div>
     </section>
 </template>
-
 
 <style scoped lang="scss">
 section.help-with-what {
@@ -71,7 +71,7 @@ section.help-with-what {
             font-size: 55px;
             font-weight: 500;
 
-            @media(max-width: 925px) {
+            @media (max-width: 925px) {
                 padding: 0 3.3vw 0 3.3vw;
                 font-size: 24px;
                 align-self: flex-start;
@@ -93,7 +93,7 @@ section.help-with-what {
             list-style-type: none;
             padding: 0;
 
-            @media(max-width: 925px) {
+            @media (max-width: 925px) {
                 display: none;
             }
         }
@@ -104,7 +104,7 @@ section.help-with-what {
         margin-top: 80px;
         cursor: default;
 
-        @media(max-width: 925px) {
+        @media (max-width: 925px) {
             display: block;
         }
     }
@@ -116,7 +116,7 @@ section.help-with-what {
         align-items: center;
         margin-top: 10px;
 
-        @media(max-width: 925px) {
+        @media (max-width: 925px) {
             margin-top: 35px;
             padding: 0 3.3vw 0 3.3vw;
         }
@@ -132,7 +132,7 @@ section.help-with-what {
             border-radius: 8px;
             cursor: pointer;
 
-            @media(max-width: 925px) {
+            @media (max-width: 925px) {
                 height: auto;
                 width: 100%;
                 padding: 13px;
@@ -140,8 +140,9 @@ section.help-with-what {
                 font-weight: 450;
             }
 
-            @media(hover: hover) {
-                transition: color 0.2s linear,
+            @media (hover: hover) {
+                transition:
+                    color 0.2s linear,
                     background-color 0.2s linear;
 
                 &:hover {
@@ -150,8 +151,9 @@ section.help-with-what {
                 }
             }
 
-            @media(hover: none) {
-                transition: 0.07s linear,
+            @media (hover: none) {
+                transition:
+                    0.07s linear,
                     background-color 0.07s linear;
 
                 &:active {
@@ -160,9 +162,6 @@ section.help-with-what {
                 }
             }
         }
-
     }
-
-
 }
 </style>

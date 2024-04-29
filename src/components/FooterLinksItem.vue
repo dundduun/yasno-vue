@@ -1,25 +1,26 @@
 <script setup lang="ts">
-
 defineProps<{
-    title: string,
+    title: string;
     links: {
-        name: string,
-        linkHref: string
-    }[]
-}>()
-
+        name: string;
+        linkHref: string;
+    }[];
+}>();
 </script>
-
 
 <template>
     <div class="wrapper">
         <h5>{{ title }}</h5>
         <div class="links">
-            <a v-for="(link, index) in links" :href="link.linkHref" :key="index">{{ link.name }}</a>
+            <a
+                v-for="(link, index) in links"
+                :href="link.linkHref"
+                :key="index"
+                >{{ link.name }}</a
+            >
         </div>
     </div>
 </template>
-
 
 <style scoped lang="scss">
 .wrapper {

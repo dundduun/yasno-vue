@@ -1,35 +1,35 @@
 <script setup lang="ts">
-import Header from './components/Header.vue'
-import CoverSection from './components/CoverSection.vue'
-import StatisticsSection from './components/StatisticsSection.vue'
-import HelpWithWhatSection from './components/HelpWithWhatSection.vue'
-import ServiceAdvantages from './components/ServiceAdvantages.vue'
-import Footer from './components/Footer.vue'
+import Header from './components/Header.vue';
+import CoverSection from './components/CoverSection.vue';
+import StatisticsSection from './components/StatisticsSection.vue';
+import HelpWithWhatSection from './components/HelpWithWhatSection.vue';
+import ServiceAdvantages from './components/ServiceAdvantages.vue';
+import Footer from './components/Footer.vue';
 </script>
 
 <template>
-  <Header />
+    <Header />
 
-  <CoverSection />
+    <CoverSection />
 
-  <StatisticsSection />
+    <StatisticsSection />
 
-  <HelpWithWhatSection />
+    <HelpWithWhatSection />
 
-  <ServiceAdvantages />
+    <ServiceAdvantages />
 
-  <Footer />
+    <Footer />
 </template>
 
 <style lang="scss">
 * {
-  box-sizing: border-box;
-  margin: 0;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 section,
 div {
-  overflow: hidden;
-  overflow-wrap: normal;
+    overflow: hidden;
+    overflow-wrap: normal;
 }
 </style>

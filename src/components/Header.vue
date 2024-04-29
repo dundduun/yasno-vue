@@ -2,11 +2,12 @@
     <div class="header">
         <div class="container">
             <a href="#" class="title">ЯСНО</a>
-            <a href="#help-with-what" class="help-with-what-anchor">С чем поможет психолог?</a>
+            <a href="#help-with-what" class="help-with-what-anchor"
+                >С чем поможет психолог?</a
+            >
         </div>
     </div>
 </template>
-
 
 <style scoped lang="scss">
 .header {
@@ -25,7 +26,7 @@
         padding: 15px 3.3vw;
         background-color: white;
 
-        @media(max-width: 925px) {
+        @media (max-width: 925px) {
             padding: 5px 3.3vw;
         }
 
@@ -35,7 +36,7 @@
             font-weight: bold;
             text-decoration: none;
 
-            @media(max-width: 925px) {
+            @media (max-width: 925px) {
                 font-size: 30px;
             }
         }
@@ -48,19 +49,19 @@
             transition: color 0.3s;
             text-decoration: none;
 
-            @media(hover: hover) {
+            @media (hover: hover) {
                 &:hover {
                     color: #42b2fc;
                 }
             }
 
-            @media(hover: none) {
+            @media (hover: none) {
                 &:active {
                     color: #42b2fc;
                 }
             }
 
-            @media(max-width: 925px) {
+            @media (max-width: 925px) {
                 font-size: 14px;
             }
         }

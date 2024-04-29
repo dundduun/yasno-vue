@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Carousel, Pagination, Slide } from 'vue3-carousel'
+import { Carousel, Pagination, Slide } from 'vue3-carousel';
 
-import 'vue3-carousel/dist/carousel.css'
+import 'vue3-carousel/dist/carousel.css';
 
 defineOptions({
     name: 'Autoplay',
@@ -9,31 +9,32 @@ defineOptions({
         Carousel,
         Slide,
         Pagination,
-    }
-})
+    },
+});
 
 defineProps<{
     helpWithWhatItems: {
-        src: string,
-        description: string,
-    }[],
-}>()
-
-
+        src: string;
+        description: string;
+    }[];
+}>();
 </script>
 
 <template>
     <Carousel class="carousel" :wrap-around="true">
-        <Slide class="slide" v-for="(helpWithWhatItem, index) of helpWithWhatItems" 
-        :key="index">
+        <Slide
+            class="slide"
+            v-for="(helpWithWhatItem, index) of helpWithWhatItems"
+            :key="index"
+        >
             <div class="carousel__item">
-                <img :src="helpWithWhatItem.src">
-                <p>{{helpWithWhatItem.description }}</p>
+                <img :src="helpWithWhatItem.src" />
+                <p>{{ helpWithWhatItem.description }}</p>
             </div>
         </Slide>
 
         <template #addons>
-            <Pagination class="pagination"/>
+            <Pagination class="pagination" />
         </template>
     </Carousel>
 </template>
@@ -43,7 +44,6 @@ defineProps<{
     width: 100%;
 
     .slide {
-
         .carousel__item {
             display: flex;
             flex-direction: column;
@@ -62,7 +62,6 @@ defineProps<{
                 text-align: center;
                 font-size: 16px;
             }
-
         }
     }
 

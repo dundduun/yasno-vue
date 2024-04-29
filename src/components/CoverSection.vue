@@ -1,40 +1,52 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import Slider from './Slider.vue'
+import { ref } from 'vue';
+import Slider from './Slider.vue';
 
 const activeTariff = ref(0);
 
 const tariffs = [
     {
         title: 'Для себя',
-        description: '~ 50 мин・от 2 850 ₽'
+        description: '~ 50 мин・от 2 850 ₽',
     },
     {
         title: 'Для двоих',
-        description: '~ 1,5 часа・от 4 850 ₽'
-    }
-]
+        description: '~ 1,5 часа・от 4 850 ₽',
+    },
+];
 </script>
-
 
 <template>
     <div class="cover-section">
         <div class="container">
             <div class="content">
-                <h1><span class="desktop-title">Консультации <br>
-                        с психологом онлайн:</span>
-                    <span class="mobile-title">Консультации с психологом онлайн:</span>
-                    <br>
+                <h1>
+                    <span class="desktop-title">
+                        Консультации
+                        <br />
+                        с психологом онлайн:
+                    </span>
+                    <span class="mobile-title">
+                        Консультации с психологом онлайн:
+                    </span >
+                    <br />
                     <Slider />
                 </h1>
 
                 <div class="clickable-part">
                     <div class="for-who">
-                        <button v-for="(tariff, index) of tariffs" :class="{ active: index === activeTariff }"
-                            @click="activeTariff = index">{{ tariff.title }}</button>
+                        <button
+                            v-for="(tariff, index) of tariffs"
+                            :class="{ active: index === activeTariff }"
+                            @click="activeTariff = index"
+                        >
+                            {{ tariff.title }}
+                        </button>
                     </div>
 
-                    <span id="price">{{ tariffs[activeTariff].description }}</span>
+                    <span id="price">{{
+                        tariffs[activeTariff].description
+                    }}</span>
 
                     <div class="pick-up">
                         <button>Подобрать психолога</button>
@@ -43,13 +55,15 @@ const tariffs = [
             </div>
 
             <div class="image-wrapper">
-                <img class="call-session" src="@/assets/images/quality-call-session.png"
-                    alt="Психолог на видеозвонке на ноутбуке">
+                <img
+                    class="call-session"
+                    src="@/assets/images/quality-call-session.png"
+                    alt="Психолог на видеозвонке на ноутбуке"
+                />
             </div>
         </div>
     </div>
 </template>
-
 
 <style scoped lang="scss">
 .cover-section {
@@ -68,7 +82,7 @@ const tariffs = [
         align-items: center;
         padding: 40px 0px 80px 3.3vw;
 
-        @media(max-width: 925px) {
+        @media (max-width: 925px) {
             flex-direction: column;
             padding-bottom: 30px;
         }
@@ -81,7 +95,7 @@ const tariffs = [
             align-items: flex-start;
             margin-bottom: 20px;
 
-            @media(max-width: 925px) {
+            @media (max-width: 925px) {
                 max-width: none;
                 width: 100%;
             }
@@ -91,14 +105,13 @@ const tariffs = [
                 font-size: 53px;
                 font-weight: 500;
 
-                @media(max-width: 925px) {
+                @media (max-width: 925px) {
                     align-self: flex-start;
                     font-size: 27px;
                 }
 
                 .desktop-title {
-
-                    @media(max-width: 925px) {
+                    @media (max-width: 925px) {
                         display: none;
                     }
                 }
@@ -106,7 +119,7 @@ const tariffs = [
                 .mobile-title {
                     display: none;
 
-                    @media(max-width: 925px) {
+                    @media (max-width: 925px) {
                         display: inline;
                     }
                 }
@@ -119,7 +132,7 @@ const tariffs = [
                 align-items: flex-start;
                 padding-right: 3.3vw;
 
-                @media(max-width: 925px) {
+                @media (max-width: 925px) {
                     width: 100%;
                 }
 
@@ -147,16 +160,17 @@ const tariffs = [
                         font-size: 20px;
                         background-color: #e6e8eb;
                         color: #434343;
-                        transition: color 0.5s,
+                        transition:
+                            color 0.5s,
                             background-color 0.5s;
-                        font-family: "Rubik", sans-serif;
+                        font-family: 'Rubik', sans-serif;
 
                         &.active {
                             background-color: white;
                             color: black;
                         }
 
-                        @media(max-width: 925px) {
+                        @media (max-width: 925px) {
                             font-size: 16px;
                             padding: 13px;
                         }
@@ -168,7 +182,7 @@ const tariffs = [
                     color: #6d757c;
                     margin-top: 7px;
 
-                    @media(max-width: 925px) {
+                    @media (max-width: 925px) {
                         font-size: 14px;
                     }
                 }
@@ -176,7 +190,7 @@ const tariffs = [
                 .pick-up {
                     margin-top: 30px;
 
-                    @media(max-width: 925px) {
+                    @media (max-width: 925px) {
                         width: 100%;
                     }
 
@@ -190,7 +204,7 @@ const tariffs = [
                         color: white;
                         cursor: pointer;
 
-                        @media(max-width: 925px) {
+                        @media (max-width: 925px) {
                             width: 100%;
                             height: auto;
                             padding: 13px;
@@ -198,8 +212,9 @@ const tariffs = [
                             font-weight: 450;
                         }
 
-                        @media(hover: hover) {
-                            transition: color 0.2s linear,
+                        @media (hover: hover) {
+                            transition:
+                                color 0.2s linear,
                                 background-color 0.2s linear;
 
                             &:hover {
@@ -208,8 +223,9 @@ const tariffs = [
                             }
                         }
 
-                        @media(hover: none) {
-                            transition: color 0.07s linear,
+                        @media (hover: none) {
+                            transition:
+                                color 0.07s linear,
                                 background-color 0.07s linear;
 
                             &:active {
@@ -228,7 +244,7 @@ const tariffs = [
             align-self: center;
             margin-top: 10px;
 
-            @media(max-width: 925px) {
+            @media (max-width: 925px) {
                 width: 100%;
             }
 
@@ -237,11 +253,11 @@ const tariffs = [
                 width: 100%;
                 max-width: 612px;
 
-                @media(max-width: 925px) {
+                @media (max-width: 925px) {
                     width: 308px;
                 }
 
-                @media(max-width: 340px) {
+                @media (max-width: 340px) {
                     width: 100%;
                 }
             }
