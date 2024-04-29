@@ -13,7 +13,7 @@ defineOptions({
 });
 
 defineProps<{
-    helpWithWhatItems: {
+    carouselItems: {
         src: string;
         description: string;
     }[];
@@ -24,12 +24,12 @@ defineProps<{
     <Carousel class="carousel" :wrap-around="true">
         <Slide
             class="slide"
-            v-for="(helpWithWhatItem, index) of helpWithWhatItems"
+            v-for="(carouselItem, index) of carouselItems"
             :key="index"
         >
             <div class="carousel__item">
-                <img :src="helpWithWhatItem.src" />
-                <p>{{ helpWithWhatItem.description }}</p>
+                <img :src="carouselItem.src" />
+                <p>{{ carouselItem.description }}</p>
             </div>
         </Slide>
 

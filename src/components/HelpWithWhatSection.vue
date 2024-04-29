@@ -43,7 +43,7 @@ const helpWithWhatItems = [
                 />
             </ul>
 
-            <Carousel class="carousel" :helpWithWhatItems="helpWithWhatItems" />
+            <Carousel class="carousel" :carouselItems="helpWithWhatItems" />
 
             <div class="button-wrapper">
                 <button>Хочу обсудить свою ситуацию</button>
